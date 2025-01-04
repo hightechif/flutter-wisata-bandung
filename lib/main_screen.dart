@@ -17,15 +17,14 @@ class MainScreen extends StatelessWidget {
             return InkWell(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const DetailScreen();
+                  return DetailScreen(place: place);
                 }));
               },
               child: Card(
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Expanded(
-                        flex: 1, child: Image.asset(place.imageAsset)),
+                    Expanded(flex: 1, child: Image.asset(place.imageAsset)),
                     Expanded(
                       flex: 2,
                       child: Padding(
