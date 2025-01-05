@@ -92,6 +92,7 @@ class DetailScreen extends StatelessWidget {
               margin: const EdgeInsets.symmetric(vertical: 16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Expanded(
                     flex: 1,
@@ -102,6 +103,7 @@ class DetailScreen extends StatelessWidget {
                         Text(
                           place.openDays,
                           style: informationTextStyle,
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),
@@ -115,6 +117,7 @@ class DetailScreen extends StatelessWidget {
                         Text(
                           place.openTime,
                           style: informationTextStyle,
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),
@@ -128,6 +131,7 @@ class DetailScreen extends StatelessWidget {
                         Text(
                           place.ticketPrice,
                           style: informationTextStyle,
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),
