@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:wisatabandung/model/tourism_place.dart';
 import 'package:wisatabandung/ui/screen/detail/detail_mobile_page.dart';
+import 'package:wisatabandung/ui/screen/detail/detail_web_page.dart';
 
 class DetailScreen extends StatelessWidget {
   final TourismPlace place;
@@ -18,9 +19,20 @@ class DetailScreen extends StatelessWidget {
         ? "Free"
         : "${place.currency} ${formatter.format(place.ticketPrice)}";
 
-    return DetailMobilePage(
-        place: place,
-        informationTextStyle: informationTextStyle,
-        ticketPrice: ticketPrice);
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        if (constraints.maxWidth > 800) {
+          return DetailWebPage(
+              place: place,
+              informationTextStyle: informationTextStyle,
+              ticketPrice: ticketPrice);
+        } else {
+          return DetailMobilePage(
+              place: place,
+              informationTextStyle: informationTextStyle,
+              ticketPrice: ticketPrice);
+        }
+      },
+    );
   }
 }

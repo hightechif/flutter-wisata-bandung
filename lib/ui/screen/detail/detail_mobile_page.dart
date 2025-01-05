@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wisatabandung/model/tourism_place.dart';
-
-import '../../component/favorite_button.dart';
+import 'package:wisatabandung/ui/component/favorite_button.dart';
 
 class DetailMobilePage extends StatelessWidget {
   final TourismPlace place;

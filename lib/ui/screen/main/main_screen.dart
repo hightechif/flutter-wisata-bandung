@@ -9,8 +9,13 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:
-            const Text("Wisata Bandung"),
+        title: const Text(
+          "Wisata Bandung",
+          style: TextStyle(
+            fontFamily: 'Staatliches',
+            fontSize: 32,
+          ),
+        ),
       ),
       body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
