@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import 'model/tourism_place.dart';
 
@@ -36,6 +37,9 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var informationTextStyle = const TextStyle(fontFamily: 'Oxygen');
+    Locale locale = const Locale("id", "ID");
+    String localeID = locale.toLanguageTag().replaceAll('-', '_');
+    var formatter = NumberFormat.decimalPattern(localeID);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -129,7 +133,7 @@ class DetailScreen extends StatelessWidget {
                         const Icon(Icons.monetization_on),
                         const SizedBox(height: 8.0),
                         Text(
-                          place.ticketPrice,
+                          "${place.currency} ${formatter.format(place.ticketPrice)}",
                           style: informationTextStyle,
                           textAlign: TextAlign.center,
                         ),
