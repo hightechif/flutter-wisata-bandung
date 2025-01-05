@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wisatabandung/main_screen.dart';
+import 'package:wisatabandung/ui/screen/main/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
