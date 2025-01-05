@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wisatabandung/tourism_place_list.dart';
+import 'package:wisatabandung/ui/screen/main/tourism_place_list.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
