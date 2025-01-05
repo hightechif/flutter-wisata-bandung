@@ -40,6 +40,10 @@ class DetailScreen extends StatelessWidget {
     Locale locale = const Locale("id", "ID");
     String localeID = locale.toLanguageTag().replaceAll('-', '_');
     var formatter = NumberFormat.decimalPattern(localeID);
+    var ticketPrice = (place.ticketPrice == 0)
+        ? "Free"
+        : "${place.currency} ${formatter.format(place.ticketPrice)}";
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -133,7 +137,7 @@ class DetailScreen extends StatelessWidget {
                         const Icon(Icons.monetization_on),
                         const SizedBox(height: 8.0),
                         Text(
-                          "${place.currency} ${formatter.format(place.ticketPrice)}",
+                          ticketPrice,
                           style: informationTextStyle,
                           textAlign: TextAlign.center,
                         ),

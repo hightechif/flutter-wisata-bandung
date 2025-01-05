@@ -63,7 +63,7 @@ var tourismPlaceList = [
     openDays: 'Open Everyday',
     openTime: '24 hours',
     ticketPrice: 0,
-    currency: 'Free',
+    currency: '',
     imageAsset: 'images/jalan-asia-afrika.jpg',
     imageUrls: [
       'https://media-cdn.tripadvisor.com/media/photo-o/0d/c2/e7/e6/quotes-kota-bandung.jpg',
@@ -95,7 +95,7 @@ var tourismPlaceList = [
     openDays: 'Open Everyday',
     openTime: '24 hours',
     ticketPrice: 0,
-    currency: 'Free',
+    currency: '',
     imageAsset: 'images/taman-film.jpg',
     imageUrls: [
       'https://media-cdn.tripadvisor.com/media/photo-o/08/8b/87/50/bandung-movie-park.jpg',
