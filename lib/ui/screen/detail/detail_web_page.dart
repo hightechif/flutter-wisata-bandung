@@ -7,18 +7,25 @@ class DetailWebPage extends StatefulWidget {
   final TextStyle informationTextStyle;
   final String ticketPrice;
 
-  const DetailWebPage(
-      {super.key,
-      required this.place,
-      required this.informationTextStyle,
-      required this.ticketPrice});
+  const DetailWebPage({
+    super.key,
+    required this.place,
+    required this.informationTextStyle,
+    required this.ticketPrice,
+  });
 
   @override
   State<DetailWebPage> createState() => _DetailWebPageState();
 }
 
 class _DetailWebPageState extends State<DetailWebPage> {
-  final _scrollController = ScrollController();
+  late final ScrollController _scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
 
   @override
   void dispose() {
@@ -31,10 +38,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: 16,
-            horizontal: 64,
-          ),
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 64),
           child: Center(
             child: SizedBox(
               width: 1200,
@@ -43,10 +47,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
                 children: [
                   const Text(
                     'Wisata Bandung',
-                    style: TextStyle(
-                      fontFamily: 'Staatliches',
-                      fontSize: 32,
-                    ),
+                    style: TextStyle(fontFamily: 'Staatliches', fontSize: 32),
                   ),
                   const SizedBox(height: 32),
                   Row(
@@ -68,15 +69,18 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                 child: ListView(
                                   controller: _scrollController,
                                   scrollDirection: Axis.horizontal,
-                                  children: widget.place.imageUrls.map((url) {
-                                    return Padding(
-                                      padding: const EdgeInsets.all(4.0),
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(10),
-                                        child: Image.network(url),
-                                      ),
-                                    );
-                                  }).toList(),
+                                  children:
+                                      widget.place.imageUrls.map((url) {
+                                        return Padding(
+                                          padding: const EdgeInsets.all(4.0),
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.circular(
+                                              10,
+                                            ),
+                                            child: Image.network(url),
+                                          ),
+                                        );
+                                      }).toList(),
                                 ),
                               ),
                             ),
@@ -100,7 +104,8 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                   ),
                                 ),
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
                                       children: <Widget>[
@@ -137,7 +142,9 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                   ],
                                 ),
                                 Container(
-                                  padding: const EdgeInsets.symmetric(vertical: 16.0),
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 16.0,
+                                  ),
                                   child: Text(
                                     widget.place.description,
                                     textAlign: TextAlign.justify,
